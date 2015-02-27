@@ -96,7 +96,7 @@ Java_com_projecttango_experiments_nativemotiontracking_TangoJNINative_tangoSetup
     // To be implemented.
 }
 
-JNIEXPORT void JNICALL
+JNIEXPORT jint JNICALL
 Java_com_projecttango_experiments_nativemotiontracking_TangoJNINative_tangoConnectCallbacks(
       JNIEnv*, jobject) {
     // To be implemented.
