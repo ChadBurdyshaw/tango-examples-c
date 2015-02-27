@@ -30,7 +30,7 @@ public class TangoJNINative {
 
     public static native int tangoConnect();
 
-    public static native void tangoConnectCallbacks();
+    public static native int tangoConnectCallbacks();
 
     public static native void tangoDisconnect();
 
