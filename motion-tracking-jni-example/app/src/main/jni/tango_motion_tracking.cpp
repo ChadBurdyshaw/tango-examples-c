@@ -18,6 +18,8 @@
 
 #include <jni.h>
 
+#include "tango_client_api.h"
+
 #include "tango-gl/camera.h"
 #include "tango-gl/grid.h"
 #include "tango-gl/util.h"
@@ -37,9 +39,15 @@ const glm::vec3 kHeightOffset = glm::vec3(0.0f, 1.3f, 0.0f);
 // FOV set up values.
 const float kHighFov = 65.0f;
 
+glm::vec3 position;
+glm::quat rotation;
+
 bool SetupGraphics(int w, int h) {
     screen_width = w;
     screen_height = h;
+
+    position = glm::vec3(0.0f, 0.0f, 0.0f);
+    rotation = glm::quat(1.0f, 0.0f, 0.0f, 0.0f);
 
     cam = new tango_gl::Camera();
     grid = new tango_gl::Grid();
@@ -62,10 +70,15 @@ bool RenderFrame() {
 
     glViewport(0, 0, screen_width, screen_height);
 
-    cam->SetPosition(kHeightOffset);
+    cam->SetPosition(position + kHeightOffset);
+    cam->SetRotation(rotation);
     grid->Render(cam->GetProjectionMatrix(), cam->GetViewMatrix());
 
     return true;
+}
+
+void onPoseAvailable(void* context, const TangoPoseData* pose) {
+    // To be implemented.
 }
 
 #ifdef __cplusplus
