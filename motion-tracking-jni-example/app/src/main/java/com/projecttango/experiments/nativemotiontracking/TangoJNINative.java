@@ -20,39 +20,23 @@ package com.projecttango.experiments.nativemotiontracking;
  * Interfaces between C and Java.
  */
 public class TangoJNINative {
-  static {
-    System.loadLibrary("motion_tracking_jni_example");
-  }
+    static {
+        System.loadLibrary("motion_tracking_jni_example");
+    }
 
-  public static native int initialize(MotionTrackingActivity activity);
+    public static native int tangoInitialize(MotionTrackingActivity activity);
 
-  public static native void setupConfig(boolean isAutoReset);
-  
-  public static native int connect();
+    public static native void tangoSetupConfig();
 
-  public static native void connectCallbacks();
-  
-  public static native void disconnect();
+    public static native int tangoConnect();
 
-  public static native void freeGLContent();
+    public static native void tangoConnectCallbacks();
 
-  public static native void initGlContent();
+    public static native void tangoDisconnect();
 
-  public static native void setupGraphic(int width, int height);
+    public static native void freeGLContent();
 
-  public static native void render();
+    public static native void setupGraphic(int width, int height);
 
-  public static native void setCamera(int cameraIndex);
-  
-  public static native void resetMotionTracking();
-  
-  public static native String getPoseString();
-  
-  public static native String getEventString();
-  
-  public static native String getVersionNumber();
-  
-  public static native float startSetCameraOffset();
-  
-  public static native float setCameraOffset(float rotX, float rotY, float zDistance);
+    public static native void render();
 }

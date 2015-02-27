@@ -32,13 +32,9 @@ LOCAL_C_INCLUDES := $(PROJECT_ROOT)/tango-service-sdk/include/ \
                     $(PROJECT_ROOT)/third-party/glm/
 
 LOCAL_SRC_FILES := tango_motion_tracking.cpp \
-                   tango_data.cpp \
-                   $(PROJECT_ROOT)/tango-gl/axis.cpp \
                    $(PROJECT_ROOT)/tango-gl/camera.cpp \
-                   $(PROJECT_ROOT)/tango-gl/frustum.cpp \
                    $(PROJECT_ROOT)/tango-gl/util.cpp \
                    $(PROJECT_ROOT)/tango-gl/grid.cpp \
-                   $(PROJECT_ROOT)/tango-gl/trace.cpp \
                    $(PROJECT_ROOT)/tango-gl/transform.cpp
 
 LOCAL_LDLIBS    := -llog -lGLESv2 -L$(SYSROOT)/usr/lib

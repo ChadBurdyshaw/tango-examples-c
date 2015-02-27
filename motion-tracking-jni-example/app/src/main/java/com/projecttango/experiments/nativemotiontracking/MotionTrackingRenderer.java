@@ -17,6 +17,7 @@
 package com.projecttango.experiments.nativemotiontracking;
 
 import android.opengl.GLSurfaceView;
+
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
@@ -26,14 +27,13 @@ import javax.microedition.khronos.opengles.GL10;
 public class MotionTrackingRenderer implements GLSurfaceView.Renderer {
 
     public void onDrawFrame(GL10 gl) {
-      TangoJNINative.render();
+        TangoJNINative.render();
     }
 
     public void onSurfaceChanged(GL10 gl, int width, int height) {
-      TangoJNINative.setupGraphic(width, height);
+        TangoJNINative.setupGraphic(width, height);
     }
 
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-      TangoJNINative.initGlContent();
     }
 }

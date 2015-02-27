@@ -17,18 +17,13 @@
             android:name="com.projecttango.libtango_device" 
             android:required="true" />
         <activity
-            android:name="com.projecttango.experiments.nativemotiontracking.StartActivity"
+            android:name="com.projecttango.experiments.nativemotiontracking.MotionTrackingActivity"
             android:label="@string/menu_name"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name="com.projecttango.experiments.nativemotiontracking.MotionTrackingActivity"
-            android:label="@string/menu_name" 
-            android:screenOrientation="landscape"> 
         </activity>
     </application>
 
